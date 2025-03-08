@@ -99,6 +99,10 @@ class AuthController extends Controller
 
             $user = User::whereEmail($request->email)->first();
 
+            if (! $user) {
+                return redirect()->route('register')->withErrors(['error_register' => 'User not found. Please register.']);
+            }
+
             if (intval($user->is_active) !== User::VERIFIED) {
                 return redirect()->route('login')->withErrors(['verify_email_err' => 'Please verify your email to login.']);
             }

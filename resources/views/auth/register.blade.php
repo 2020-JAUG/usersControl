@@ -3,6 +3,16 @@
 @section("title", "Register Page")
 
 @section("content")
+
+@if($errors->has('error_register'))
+<div class="alert alert-danger alert-dismissible fade show alert-danger" role="alert" id="alert-danger">
+    {{ $errors->first('error_register') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
+
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="col-md-6 mt-4">
         <form class="form" action="{{ route("register") }}" method="post">

@@ -54,6 +54,12 @@
         .profile-form button:hover {
             background-color: #138496;
         }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
     </style>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
